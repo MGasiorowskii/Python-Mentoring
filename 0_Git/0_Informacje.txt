@@ -1,0 +1,14 @@
+Stanisław Kochanski - programista Django, REST
+
+[błędy, wskazówki, zadania domowe]
+
+-> Nastawienie na czysty kod! <-
+
+Czwartek 19:00
+
+https://drive.google.com/drive/folders/1i363Jk6U9F4v1YGGFPEmcai9-_x-bPKE
+
+Pycharm -> LEPSZY
+
+1.wysyłanie co chwile commitów nigdy całego programu na raz
+
