@@ -23,11 +23,11 @@ while True:
     elif user_choice == 2:
         word = input("Give a word: ").lower()
         definition = ANG_dictionary.get(word, "Lack of definition in dictionary").lower()
-        print(f"Definition of this word {word}: {definition}")
+        print(f"Definition of this word {word}: '{definition}' ")
 
     elif user_choice == 3:
         word = input("Input a word to remove from dictionary: ").lower()
-        ANG_dictionary.pop(word, "Lack of this word in dictionary")
+        ANG_dictionary.pop(word, "Lack of this word in dictionary")     #???
 
     elif user_choice == 4:
         print(ANG_dictionary)
