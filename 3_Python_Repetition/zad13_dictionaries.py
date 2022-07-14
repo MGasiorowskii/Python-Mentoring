@@ -18,6 +18,7 @@ while True:
     if user_choice == 1:
         word = input("Give a word: ").lower()
         definition = input("Give a definition: ").lower()
+        ANG_dictionary[word] = definition
         ANG_dictionary.update(word, definition)
 
     elif user_choice == 2:
