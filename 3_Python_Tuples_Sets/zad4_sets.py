@@ -3,7 +3,7 @@ def info_from_sets(number_set):
     print(f"Elements: {number_set}\n")
 
 
-n = int(input("Input value of n: "))
+n: int = int(input("Input value of n: "))
 
 A = set()
 B = set()

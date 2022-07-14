@@ -1,21 +1,19 @@
+import string
+
 phrase = "To be, !or not to be is the; opening phrase of a soliloquy given by Prince Hamlet? in the so-callednunnery" \
          " scene of William Shakespeare's play Hamlet:, Act 3, Scene 1."
 
-signs = [",", ".", ":", ";", "!", "?"]
+
+signs = string.punctuation
 
 for sign in signs:
     phrase = phrase.replace(sign, "")
 print(phrase)
 
 word = ""
-sentence = []
-for sign in phrase:
-    if sign != " ":
-        word += sign
-    else:
-        sentence.append(word)
-        word = ""
-sentence.append(word)
+sentence = phrase.split(" ")
+print(sentence)
+
 
 print("\nTuples")
 signs_tuple = tuple(sentence)

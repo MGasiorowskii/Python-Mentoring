@@ -5,7 +5,7 @@ height_of_rocket = 0
 while (fuel_level <= 5000) or (fuel_level >= 30000):
     fuel_level = int(input("Input correct fuel level (5000-30000): "))
 
-while (numbers_of_astronauts <= 0) or (numbers_of_astronauts > 7):
+while 0 <= numbers_of_astronauts <= 7:
     numbers_of_astronauts = int(input("Input correct numbers of astronauts (0-7]: "))
 
 while fuel_level >= 100:

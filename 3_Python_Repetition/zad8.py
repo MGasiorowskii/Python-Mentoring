@@ -1,12 +1,12 @@
-height = float(input("Input your height (w m): "))
-weight = float(input("Input your weight (w kg): "))
+height: float = float(input("Input your height (w m): "))
+weight: float = float(input("Input your weight (w kg): "))
 
 bmi = weight / (height**2)
-print("Your BMI is: ", round(bmi, 2))
+print(f"Your BMI is: {round(bmi, 2)}")
 
 if bmi < 18.5:
     print("You have underweight")
-elif (bmi >= 18.5) and (bmi <= 24):
+elif 18.5 <= bmi <= 24:
     print("You have healthy weight")
 elif (bmi > 24) and (bmi <= 26.5):
     print("You have little overweight")
