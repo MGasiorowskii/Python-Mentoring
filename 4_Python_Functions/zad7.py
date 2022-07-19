@@ -13,7 +13,7 @@ def angle_from_time(**kwargs) -> float:
     if value_hour >= 12:
         hour_angle = (value_hour - 12) * 30 + (0.5 * value_minute)
     else:
-         hour_angle = value_hour * 30 + (0.5 * minute_angle)
+        hour_angle = value_hour * 30 + (0.5 * minute_angle)
 
     return abs(hour_angle - minute_angle)
 

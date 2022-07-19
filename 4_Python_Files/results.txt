@@ -1,0 +1,9 @@
+10.1
+Value of the brightest pixel: 99
+Value of the darkest pixel: 10
+10.2
+The smallest number of line to be removed: 149
+10.3
+The number of contrasting pixels: 753
+10.4
+The longest vertical line: 24
