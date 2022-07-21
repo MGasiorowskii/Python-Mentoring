@@ -8,7 +8,7 @@ def max_element_and_index(numbers: list[int]) -> [int, int]:
 
 
 def main():
-    nums = [4, 6, 8, 24, 12, 2]
+    nums: list[int] = [4, 6, 8, 24, 12, 2]
 
     print(max_element_and_index(nums))
 
