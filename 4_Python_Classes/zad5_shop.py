@@ -1,29 +1,30 @@
+from __future__ import annotations
+
+
 class Manager:
 
     def __init__(self):
         self.orders = {}
 
-    def __str__(self):
+    def display_orders(self):
         for order in self.orders:
             print(order)
             print(f"- quantity: {self.orders[order]}")
-        return "This is list of product in Stock\n"        #twrozyć jakas tablice do wyswietlania czy tak jest ok ?
 
-    def add_product(self, id: int, name: str, price: float):
-
-        create_flag = 1
+    def add_product(self, new_order: Order):
+        if not self.orders:
+            self.orders[new_order] = 1
+            return
         for order in self.orders:
-            if id == order.id:
+            if new_order.id == order.id:
                 self.orders[order] += 1
-                create_flag = 0
-
-        if create_flag:
-            self.orders[Order(id, name, price)] = 1
+                return
+        self.orders[new_order] = 1
 
     def sell_product(self, id_to_sell):
         for order in self.orders:
             if order.id == id_to_sell:
-                self.orders[order] -=1
+                self.orders[order] -= 1
 
 
 class Order:
@@ -39,13 +40,16 @@ class Order:
 def main():
 
     ziomek = Manager()
-    ziomek.add_product(1, "toster", 12.33)
-    ziomek.add_product(2, "patelnia", 5.33)
-    ziomek.add_product(2, "patelnia", 5.33)
-    print(ziomek)
+    p1 = Order(1, "toster", 12.33)
+    p2 = Order(1, "toster", 12.33)
+    ziomek.add_product(p1)
+    ziomek.add_product(p2)
+    # ziomek.add_product(2, "patelnia", 5.33)
+    # ziomek.add_product(2, "patelnia", 5.33)
+    print(ziomek.display_orders())
 
-    ziomek.sell_product(2)
-    print(ziomek)
+    # ziomek.sell_product(2)
+    # print(ziomek)
 
 
 if __name__ == "__main__":

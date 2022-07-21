@@ -12,8 +12,8 @@ def main():
                     break
 
     with open("results.txt", "a") as file:
-                file.write("10.2\n")
-                file.write(f"The smallest number of line to be removed: {numbers_line_to_remove}\n")
+        file.write("10.2\n")
+        file.write(f"The smallest number of line to be removed: {numbers_line_to_remove}\n")
 
 
 if __name__ == "__main__":

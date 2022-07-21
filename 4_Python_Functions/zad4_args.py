@@ -10,9 +10,10 @@ def multiplication(*args: int) -> int:
 
 
 def main():
+    nums = [5, 7, 8]   #Jak przekazywać tablice do *args ?
 
-    #nums = (5, 7, 8)   #Jak przekazywać tablice do *args ?
-    print(multiplication(5, 7, 8))
+    print(nums)
+    print(multiplication(*nums, 10))
 
 
 if __name__ == "__main__":

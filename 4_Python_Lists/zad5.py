@@ -12,7 +12,7 @@ for sign in signs:
 
 text = phrase.split(" ")
 
-print(len(text))
+print(f"Długość textu: {len(text)}")
 
 for word in text:
 
@@ -21,7 +21,7 @@ for word in text:
 print()
 
 flag = False
-for word, index in zip(text, range(len(text))):
+for word, index in enumerate(text):
 
     if word in words:
         print(f"word: {word}  index: {index}")

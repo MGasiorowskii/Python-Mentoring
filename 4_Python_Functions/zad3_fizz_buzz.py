@@ -1,4 +1,4 @@
-def fizz_buzz(number: int) -> str or int:
+def fizz_buzz(number: int) -> None:
     """
     Function return:
     "Fizz" - if number is divisible by 3
@@ -17,7 +17,7 @@ def fizz_buzz(number: int) -> str or int:
 
 
 def main():
-    number = int(input("Input any number: "))
+    number: int = int(input("Input any number: "))
 
     for value in range(number):
         fizz_buzz(value)
