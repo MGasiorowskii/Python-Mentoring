@@ -8,7 +8,7 @@ class Notebook:
 
     def display_everything(self) -> None:
         print("Your Notes:")
-        for index, note in enumerate(self.list_of_notes,1):
+        for index, note in enumerate(self.list_of_notes, 1):
             print(f"{index}. {note}")
 
     def add_new(self, author: str, content: str) -> None:
