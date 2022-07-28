@@ -1,10 +1,18 @@
 from __future__ import annotations
 import time
+import datetime
 
 
 class Notebook:
     def __init__(self):
         self.list_of_notes = []
+
+    def __len__(self):
+        return len(self.list_of_notes)
+
+    def __getitem__(self, item):
+        return self.list_of_notes[item]
+
 
     def display_everything(self) -> None:
         print("Your Notes:")
@@ -26,7 +34,6 @@ class Notebook:
         self.list_of_notes.append(new_note)
 
     def add_note(self, new_note: Note) -> None:
-
         if not self.list_of_notes:
             self.list_of_notes.append(new_note)
             return
@@ -35,18 +42,17 @@ class Notebook:
             if note.author == new_note.author and note.content == new_note.content:
                 print("Such a note already exists")
                 return
-
         self.list_of_notes.append(new_note)
 
     def count_notes(self) -> None:
-        print(f"Notebook contains {len(self.list_of_notes)} notes")
+        print(f"Notebook contains {len(self)} notes")
 
 
 class Note:
     def __init__(self, author_: str, content_: str) -> None:
         self.author = author_
         self.content = content_
-        self.hour = time.localtime()[3]
+        self.hour = datetime.datetime.now().hour
         self.minutes = time.localtime()[4]
 
     def __str__(self):
@@ -68,6 +74,11 @@ def main():
     nb.add_new("Bartek", "Dokonczyc instrukcje")
 
     nb.count_notes()
+
+
+    print(len(nb))
+
+    print(nb[3])
 
 
 if __name__ == "__main__":

@@ -2,21 +2,18 @@ from __future__ import annotations
 from typing import Optional, Union
 import time
 
-# jak zrobić aby kazdy tworzony Tank trafaiał na jakas liste ?
-
 
 class Tank:
     def __init__(self, name_: str, max_volume_: int, actual_level_: Optional[int] = 0) -> None:
         self.name = name_
         self.max_volume = max_volume_
         self.actual_level = actual_level_
-        self.logs = []
+        self.logs: list[dict] = []
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Name: {self.name}\nMax Volume: {self.max_volume}\nActual Level: {self.actual_level}\nLogs: {self.logs}\n"
 
-    def logging(self, operation: str, name: str, volume: int, result: bool):
-
+    def logging(self, operation: str, name: str, volume: int, result: bool) -> None:
         struct = {"Date": "",
                   "Time": "",
                   "Operation": "",
@@ -32,13 +29,12 @@ class Tank:
         self.logs.append(struct)
 
     def pour_water(self, volume: int) -> bool:
-
         if self.actual_level + volume > self.max_volume:
             self.logging("pour_water", self.name, volume, False)
             return False
-        else:
-            self.logging("pour_water", self.name, volume, True)
-            return True
+
+        self.logging("pour_water", self.name, volume, True)
+        return True
 
     def pour_out_water(self, volume: int) -> bool:
 
@@ -77,6 +73,8 @@ def most_water(*args: Tank) -> list[str, ...]:
 
 
 def most_filled(*args: Tank) -> list[str, ...]:
+    # x.sort(key=lambda: tank.actual_level/ tank.max_volume)
+    # x[-1]
     max_value = 0
     name = []
     for tank in args:
@@ -147,8 +145,7 @@ def check_state(initial_volume: int, tank: Tank) -> bool:
 
     if initial_volume == tank.actual_level:
         return True
-    else:
-        return False
+    return False
 
 
 def main():
