@@ -8,15 +8,26 @@ bill_items = [
     ['Rich', 'Bruschetta Originale', 5.35],
     ['Rich', 'La Reine', 10.65],
     ['Rich', 'Honeycomb Cream Slice', 4.90],
+    ['Rich', 'Honeycomb Cream Slice', 4.90],
     ['Rosie', 'Garlic Bread', 4.35],
     ['Rosie', 'Veneziana', 9.40],
+    ['Rosie', 'Tiramisu', 4.90],
+    ['Rosie', 'Tiramisu', 4.90],
     ['Rosie', 'Tiramisu', 4.90],
 ]
 summary = {}
 name = ""
 
-for order in bill_items:
 
+"""
+for name, dish, price in bill_items:
+    print(name, dish, price)
+"""
+
+
+
+for order in bill_items:
+    name, dish, price = order
     if order[0] == name:
         price += order[2]
         dish.append(order[1])

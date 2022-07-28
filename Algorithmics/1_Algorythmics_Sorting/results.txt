@@ -1,0 +1,15 @@
+Times of sorting of arrays of 1000 elements:
+- Bubble sorting: 0:00:00.040890
+- Insertion sorting: 0:00:00.018949
+- Quick sorting: 0:00:00.000997
+
+Times of sorting of arrays of 10000 elements:
+- Bubble sorting: 0:00:04.230592
+- Insertion sorting: 0:00:01.986662
+- Quick sorting: 0:00:00.011937
+
+Times of sorting of arrays of 100000 elements:
+- Bubble sorting: 0:07:08.638216
+- Insertion sorting: 0:03:20.564665
+- Quick sorting: 0:00:00.133968
+

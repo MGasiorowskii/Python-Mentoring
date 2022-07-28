@@ -10,12 +10,12 @@ class Vehicles:
 
 
 class Depot:
-    def __init__(self, name_: str, typ_: str):
+    def __init__(self, name_: str, typ_: str) -> None:
         self.name = name_
         self.typ = typ_
         self.list_of_vehicles = []
 
-    def __str__(self):
+    def __str__(self) -> str:
         print(f"{self.name} - {self.typ} type\nList of vehicles in dept:")
         for vehicle in self.list_of_vehicles:
             print(vehicle)
@@ -45,6 +45,9 @@ class Depot:
                 return "Incorrect data"
 
         return total_fuel
+
+class BusDepot(Depot):
+    pass
 
 
 class Tramway(Vehicles):
