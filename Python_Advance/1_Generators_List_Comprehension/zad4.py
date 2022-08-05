@@ -1,4 +1,7 @@
-def fibonacci_numbers(nums):
+import collections
+
+
+def fibonacci_numbers(nums: int) -> collections.Iterable:
     a = 1
     b = 2
     yield 0
