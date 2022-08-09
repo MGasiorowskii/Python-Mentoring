@@ -1,4 +1,4 @@
-from functionality.operations import *
+from functionality.operations import primary_numbers
 
 
 def test_should_return_false_for_zero_value():
