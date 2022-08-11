@@ -11,30 +11,30 @@ def test_should_return_false_for_negative_values():
     num1 = -3
     num2 = -1
 
-    assert primary_numbers(num1) == False
-    assert primary_numbers(num2) == False
+    assert not primary_numbers(num1)
+    assert not primary_numbers(num2)
 
 
 def test_should_return_false_for_one_value():
     num = 1
 
-    assert primary_numbers(num) == False
+    assert not primary_numbers(num)
 
 
 def test_should_return_true_for_postive_primary_values():
     num1 = 2
     num2 = 5
 
-    assert primary_numbers(num1) == True
-    assert primary_numbers(num2) == True
+    assert primary_numbers(num1)
+    assert primary_numbers(num2)
 
 
 def test_should_return_false_for_postive_not_primary_values():
     num1 = 4
     num2 = 8
 
-    assert primary_numbers(num1) == False
-    assert primary_numbers(num2) == False
+    assert not primary_numbers(num1)
+    assert not primary_numbers(num2)
 
 
 """
