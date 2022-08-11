@@ -1,13 +1,18 @@
-def primary_numbers(num: int) -> bool:
+from typing import Union
 
-    dividers = []
-    if num > 0:
 
-        for divider in range(1, num + 1):
-            if num % divider == 0:
-                dividers.append(divider)
+def primary_numbers(num: int) -> Union[bool, str]:
+    if isinstance(num, int):
+        dividers = []
+        if num > 0:
 
-        if len(dividers) == 2:
-            return True
+            for divider in range(1, num + 1):
+                if num % divider == 0:
+                    dividers.append(divider)
 
-    return False
+            if len(dividers) == 2:
+                return True
+
+        return False
+    else:
+        return "Invalid data"

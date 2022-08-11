@@ -1,5 +1,5 @@
 def example1():
-    for i in range(3):
+    for _ in range(3):
         try:
             x = int(input("enter a number: "))
             y = int(input("enter another number: "))
@@ -34,6 +34,8 @@ def printUpperFile(fileName):
         for line in file:
             print(line.upper())
         file.close()
+    except PermissionError:
+        pass
     except FileNotFoundError:
         print("Incorrect path to file")
 
