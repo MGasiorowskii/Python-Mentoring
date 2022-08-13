@@ -63,14 +63,82 @@ def test_should_pass_for_value_lesser_than_len_of_todos(mocker, todos):
 
 @pytest.mark.add_todo
 @pytest.mark.parametrize("content", [5])
-def test_should_pass_for_int_value(content):
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_int_value(mocker, content, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
     add_todo(content)
+
+    assert content in todos
 
 
 @pytest.mark.add_todo
-@pytest.mark.parametrize("content", ["str"])
-def test_should_pass_for_str_value(content):
+@pytest.mark.parametrize("content", ["value"])
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_str_value(mocker, content, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
     add_todo(content)
 
+    assert content in todos
 
 
+@pytest.mark.remove_todo
+@pytest.mark.parametrize("pos", [2])
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_int_value(mocker, pos, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
+    expected = todos[pos]
+    remove_todo(pos)
+
+    assert expected not in todos
+
+
+@pytest.mark.edit_todo
+@pytest.mark.parametrize("pos", [2])
+@pytest.mark.parametrize("content", [5])
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_int_value(mocker, pos, content, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
+    edit_todo(pos, content)
+
+    expected = content
+    result = todos[pos]
+
+    assert expected == result
+
+
+@pytest.mark.edit_todo
+@pytest.mark.parametrize("pos", [2])
+@pytest.mark.parametrize("content", ["value"])
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_str_value(mocker, pos, content, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
+    edit_todo(pos, content)
+
+    expected = content
+    result = todos[pos]
+
+    assert expected == result
+
+
+@pytest.mark.remove_all
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_todos_list_with_elements(mocker, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
+    remove_all()
+
+    expected = []
+    result = todos
+
+    assert expected == result
+
+
+@pytest.mark.remove_all
+@pytest.mark.parametrize("todos", [["a", "b", "c"]])
+def test_should_pass_for_empty_todos_list(mocker, todos):
+    mocker.patch.object(functionality.src, 'todos', todos)
+    remove_all()
+
+    expected = []
+    result = todos
+
+    assert expected == result
