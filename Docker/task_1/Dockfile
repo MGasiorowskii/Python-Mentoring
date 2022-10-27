@@ -1,0 +1,9 @@
+FROM python:3.7-alpine # 1
+WORKDIR /app # 2
+ENV FLASK_APP=main.py # 3
+ENV FLASK_RUN_HOST=0.0.0.0 # 4
+COPY requirements.txt requirements.txt # 5
+RUN pip install --no-cache-dir -r requirements.txt # 6
+EXPOSE 5000 # 7
+COPY . . # 8
+CMD ["flask", "run"] # 9
